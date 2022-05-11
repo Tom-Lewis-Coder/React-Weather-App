@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'montserrat', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+  background-image: url('sunnyDayIMG.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s, ease-out;
+} 
+
+.weather-cloud {
+  background-image: url('weatherIMG.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s, ease-out;
 }
 
-.App-header {
-  background-color: #282c34;
+.weather-bad {
+  background-image: url('badWeatherIMG.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s, ease-out;
+}
+
+main {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 25px;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
 }
 
-.App-link {
-  color: #61dafb;
+.search-box {
+  width: 100%;
+  margin: 0 0 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-box .search-bar {
+  display: block;
+  width: 100%;
+  padding: 15px;
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  background-color: rgba(243, 243, 250, 0.63);
+  border-radius: 16px 16px 16px 16px;
+
+  box-shadow: 0px 4px rgba(0,0,0,0.3);
+
+  color:#313131;
+  font-size: 20px;
+
+  transition: 0.4s ease;
+}
+
+.search-box .search-bar:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.location-box {
+  text-align: center;
+  color:white;
+  text-shadow: 0px 2px rgba(0,0,0,0.5);
+  margin-bottom: 15px;
+}
+
+.location-box .location {
+  font-size: 40px;
+}
+
+.date {
+  text-align: center;
+  color:white;
+  text-shadow: 0px 2px rgba(0,0,0,0.5);
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.weather-box {
+  text-align: center;
+  color:white;
+  text-shadow: 0px 2px rgba(0,0,0,0.5);
+}
+
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 75px;
+  background-color: rgba(59, 57, 57, 0.4);
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0px 2px rgba(0,0,0,0.5);
+}
+
+.weather-icon {
+ display: flex;
+ justify-content: center;
 }
