@@ -15,20 +15,20 @@ const App = () => {
     base: 'http://api.openweathermap.org/data/2.5/'
   }
 
-const search = (evt) => {
-    if (evt.key === "Enter") {
-        fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-          .then(resp => resp.json())
-          .then(weatherData => { 
-          setWeather(weatherData)
-          setQuery("")
-        })
-    }
-}
+  const search = (evt) => {
+      if (evt.key === "Enter") {
+          fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+            .then(resp => resp.json())
+            .then(weatherData => { 
+            setWeather(weatherData)
+            setQuery("")
+          })
+      }
+  }
 
-const handleChange = e => {
-  setQuery(e.target.value)
-}
+  const handleChange = e => {
+    setQuery(e.target.value)
+  }
 
   const getIcon = iconCode => {
     return `http://openweathermap.org/img/wn/${iconCode}@2x.png`
@@ -44,12 +44,12 @@ const handleChange = e => {
             loadWeather={search} 
             handleChange={handleChange}
             value={query} />
+          <DateBuilder />
         {( weather.main && 
         <div>
             <Location 
               city={weather.name} 
               country={weather.sys.country} />
-            <DateBuilder />
             <WeatherDisplay 
               temp={Math.round(weather.main.temp)} 
               weather={weather.weather[0].main} 
