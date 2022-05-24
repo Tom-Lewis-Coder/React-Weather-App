@@ -40,21 +40,23 @@ const App = () => {
     <main 
     className={ weather.main && imgDisplay > 7 ? "weather-bad" : imgDisplay > 3 ? "weather-cloud" : 'app' } 
       >
+        <div className='container'>
           <SearchBar 
             loadWeather={search} 
             handleChange={handleChange}
-            value={query} />
+            value={query} /> 
           <DateBuilder />
-        {( weather.main && 
-        <div>
-            <Location 
-              city={weather.name} 
-              country={weather.sys.country} />
-            <WeatherDisplay 
-              temp={Math.round(weather.main.temp)} 
-              weather={weather.weather[0].main} 
-              src={getIcon(weather.weather[0].icon)} />
-        </div> )}
+          {( weather.main && 
+          <div>
+              <Location 
+                city={weather.name} 
+                country={weather.sys.country} />
+              <WeatherDisplay 
+                temp={Math.round(weather.main.temp)} 
+                weather={weather.weather[0].main} 
+                src={getIcon(weather.weather[0].icon)} />
+          </div> )}
+        </div>
     </main>
   )
 }
