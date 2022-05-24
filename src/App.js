@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <main 
-    className={ weather.main && imgDisplay > 7 ? "weather-bad" : imgDisplay < 3 ? "app" : "weather-cloud" } 
+    className={ weather.main && imgDisplay > 7 ? "weather-bad" : imgDisplay > 3 ? "weather-cloud" : 'app' } 
       >
           <SearchBar 
             loadWeather={search} 
