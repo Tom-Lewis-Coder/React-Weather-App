@@ -11,7 +11,7 @@ const App = () => {
   const [weather, setWeather] = useState({})
 
   const api = {
-    key: 'c5a3da79e6f253015e9c856837f98a0c',
+    key: process.env.REACT_APP_API_KEY,
     base: 'http://api.openweathermap.org/data/2.5/'
   }
 
